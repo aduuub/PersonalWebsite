@@ -1558,7 +1558,6 @@ section.contact-wrap .title {
 /* 14. Footer Styles
 ----------------------------------- */
 
-
 .social-icons {
   float: left;
 }
@@ -1567,6 +1566,10 @@ section.contact-wrap .title {
 }
 .footer-wrap {
   padding: 35px 0;
+}
+
+.right-copyright p {
+  color: black;
 }
 
 .social-icons li a {
