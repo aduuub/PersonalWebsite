@@ -955,7 +955,7 @@ header.nav.hide-menu {
 
 .portfolio-top .title {
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .portfolio-category {}
@@ -1409,7 +1409,6 @@ span.num {
 
 .portfolio-top .title {
   color: #fff;
-  padding-bottom: 60px;
 }
 
 .contact p, {
@@ -1452,7 +1451,7 @@ section.contact-wrap .title {
   padding-right: 10px;
   border-right: 1px solid #000;
 }
-.contact-info li a{
+.contact-info a, .contact-info p{
   font-size: 16px;
   font-weight: 400;
   color: #727272;
@@ -1564,12 +1563,16 @@ section.contact-wrap .title {
 .copyright {
   float: right;
 }
-.footer-wrap {
-  padding: 35px 0;
+
+.right-copyright p{
+  text-align: right;
+  color: #FFF;
+  font-size: 14px;
+  padding-top: 20px;
 }
 
-.right-copyright p {
-  color: black;
+.footer-wrap {
+  padding: 35px 0;
 }
 
 .social-icons li a {
@@ -1619,7 +1622,7 @@ section.contact-wrap .title {
 }
 
 .copyright p {
-  color: #c4c4c4;
+  color: #FFF;
   font-size: 12px;
   line-height: 20px;
 }
