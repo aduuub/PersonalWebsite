@@ -10,7 +10,6 @@ import Navigation from 'components/nav';
 import Footer from 'components/footer';
 import Constants from 'models/constants';
 
-
 import person from 'assets/person.png';
 
 export default class AppRoute extends React.Component {
