@@ -1,0 +1,51 @@
+// ==========
+// NAVIGATION
+// ==========
+
+.Nav {
+  background-color: $primary;
+  padding: $v * 3 $v * 5;
+}
+
+.Nav-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $white;
+}
+
+// <ul>
+.Nav-links {
+  // Reset
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+// <li>
+.Nav-links-item {
+  display: inline-block;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+
+  @media #{$mobile-only} {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.Nav-links-item--tabletOnly {
+  @media #{$mobile-only} {
+    display: none;
+  }
+}
+
+.Nav-links-item--largeOnly {
+  display: none;
+  @media #{$laptop} {
+    display: block;
+  }
+}

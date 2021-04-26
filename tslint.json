@@ -1,0 +1,35 @@
+{
+  "defaultSeverity": "warning",
+  "extends": "tslint:recommended",
+  "rules": {
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "no-trailing-whitespace": false,
+    "no-empty-interface": false,
+    "space-before-function-paren": [ "error", "always" ],
+    "ordered-imports": [
+      false,
+      {
+        "grouped-imports": true,
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+    "member-access": false,
+    "no-console": false,
+    "object-literal-sort-keys": false,
+    "no-bitwise": {
+      "severity": "warn"
+    },
+    "prefer-for-of": false,
+    "no-var-requires": {
+      "severity": "warn"
+    },
+    "only-arrow-functions": false,
+    "max-line-length": false,
+    "no-empty": false,
+    "max-classes-per-file": false
+  }
+}

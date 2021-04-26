@@ -1,0 +1,30 @@
+.Footer {
+    height: 56px;
+    padding: 12px 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer-text {
+    margin: 0;
+    color: $white;
+    height: 100%;
+}
+
+.Footer-sponsor {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.Footer-sponsor-image {
+    height: 100%;
+}
+
+.Footer-sponsor-text {
+    color: $white;
+    margin-right: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
