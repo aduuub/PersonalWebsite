@@ -77,8 +77,9 @@ export default class HomeContact extends React.Component<IProps, IState> {
 
         const formData = new ContactFormData(name, email, message);
         const data = JSON.stringify(formData);
+        const baseUrl = window.location.origin;
     
-        fetch('http://localhost:5000/contact', {
+        fetch(baseUrl + '/.netlify/functions/contact', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
