@@ -32,7 +32,7 @@ async function send(body: any, transport: any): Promise <void> {
         from: body.email,
         to: "adamwareing241@gmail.com",
         subject: "Contact Form Message",
-        html: `<p>Name: ${body.name}</p><p>Email: ${body.email}</p><p>Message: ${body.message}</p>`,
+        html: `<p>Name: ${body}</p><p>Email: ${body.email}</p><p>Message: ${body.message}</p>`,
     };
 
     return new Promise((resolve, reject) => {
@@ -64,8 +64,8 @@ exports.handler = async function (event: any, _: any): Promise<IResponse> {
     
     } catch(error) { 
         return {
-            statusCode: 400,
-            body: JSON.stringify({ error: error, test: process.env.EMAIL })
+            statusCode: 500,
+            body: JSON.stringify({ error: "An error occured trying to send the message" })
         };
     }
 }
