@@ -27,12 +27,18 @@ async function setup(): Promise < any > {
 
 // Sends the message once the transport has been setup and verified
 
-async function send(body: any, transport: any): Promise <void> {
+interface IEnquiry {
+    name: string;
+    email: string;
+    message: string;
+}
+
+async function send(enquiry: IEnquiry, transport: any): Promise <void> {
     const mail = {
-        from: body.email,
+        from: enquiry.email,
         to: "adamwareing241@gmail.com",
         subject: "Contact Form Message",
-        html: `<p>Name: ${body}</p><p>Email: ${body.email}</p><p>Message: ${body.message}</p>`,
+        html: `<p>Name: ${enquiry.name}</p><p>Email: ${enquiry.email}</p><p>Message: ${enquiry.message}</p>`,
     };
 
     return new Promise((resolve, reject) => {
@@ -58,7 +64,8 @@ exports.handler = async function (event: any, _: any): Promise<IResponse> {
     try {
         await setup()
             .then(transport => {
-                return send(event.body, transport);
+                const enquiry = JSON.parse(event.body);
+                return send(enquiry, transport);
             });
         return { statusCode: 200 };
     
