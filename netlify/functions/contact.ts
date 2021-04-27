@@ -53,7 +53,7 @@ interface IResponse {
     body?: string;
 }
 
-exports.handler = async function (event: any, context: any): Promise<IResponse> {
+exports.handler = async function (event: any, _: any): Promise<IResponse> {
 
     try {
         await setup()
