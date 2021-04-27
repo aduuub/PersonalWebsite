@@ -65,7 +65,7 @@ exports.handler = async function (event: any, _: any): Promise<IResponse> {
     } catch(error) { 
         return {
             statusCode: 400,
-            body: JSON.stringify({ error: error })
+            body: JSON.stringify({ error: error, test: process.env.EMAIL })
         };
     }
 }
