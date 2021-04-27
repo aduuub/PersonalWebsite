@@ -72,7 +72,9 @@ exports.handler = async function (event: any, _: any): Promise<IResponse> {
     } catch(error) { 
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "An error occured trying to send the message" })
+            body: JSON.stringify({ error: error })
         };
     }
 }
+
+// "An error occured trying to send the message"
