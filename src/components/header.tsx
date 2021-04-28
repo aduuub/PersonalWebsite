@@ -39,8 +39,8 @@ export default class Header extends React.Component<IProps> {
               <h1>Who is Adam?</h1>
               <h5>An entrepreneur, software developer, and project manager in Wellington, NZ</h5>
             </div>
-            <div className='Header-content'>
-              <div className='Grid Header-content-items'>
+            <div className='Container'>
+              <div className='Grid Header-items'>
                 {featureTiles}
               </div>
             </div>

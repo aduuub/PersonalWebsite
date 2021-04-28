@@ -21,7 +21,6 @@ module.exports = {
         },
         extensions: ['.tsx', '.ts', '.js', '.css'],
         fallback: {
-            path: require.resolve('path-browserify'),
             fs: false,
         }
     },
