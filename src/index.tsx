@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from 'routes/app';
 
@@ -11,10 +11,7 @@ class Root extends React.Component {
     return (
       <div className='hi'>
         <BrowserRouter>
-          <Switch>
-            {/* Home */}
-            <Route path='/' component={App} />
-          </Switch>
+          <App />
         </BrowserRouter>
       </div>
     );

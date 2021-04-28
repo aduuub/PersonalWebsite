@@ -20,7 +20,8 @@ export default class HomeBlog extends React.Component<IProps> {
     const feature = <FeatureBlog isLeft={!isFlipped} article={this.props.articles[0]} />;
 
     // Standard tiles
-    const remainingTiles = this.props.articles.slice(1, 4);
+    // const remainingTiles = this.props.articles.slice(1, 4);
+    const remainingTiles = [this.props.articles[0], this.props.articles[0], this.props.articles[0]];
     const blogs = <BlogList articles={remainingTiles} />;
     
     // Both columns (so we can flip it)

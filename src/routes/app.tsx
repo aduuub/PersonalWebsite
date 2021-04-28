@@ -1,37 +1,24 @@
 import * as React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import { IArticleTile } from 'models/article';
-
-import AboutMe from 'components/about-me';
-import Contact from 'components/home-contact';
-import Header from 'components/header';
-import HomeBlog from 'components/home-blog';
 import Navigation from 'components/nav';
 import Footer from 'components/footer';
-import Constants from 'models/constants';
 
-import person from 'assets/person.png';
+import Home from './home';
+import Blog from './blog';
 
 export default class AppRoute extends React.Component {
 
   render() {
-    const articles: IArticleTile[] = [
-      {image: person, title: 'Article name', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. '},
-      {image: person, title: 'Article name', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. '},
-      {image: person, title: 'Article name', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. '},
-      {image: person, title: 'Article name', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. '},
-    ];
-
     return (
-      <div>
+      <>
         <Navigation />
-        <Header />
-        <AboutMe />
-        <HomeBlog articles={articles} name={Constants.propertyKey} />
-        <HomeBlog articles={articles} name={Constants.softwareKey} flipped={true} blue={true} />
-        <Contact />
+        <Switch>
+          <Route path='/blog' component={Blog} />
+          <Route path='*' component={Home} />
+        </Switch>
         <Footer />
-      </div>
+      </>
     );
   }
 }

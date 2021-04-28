@@ -19,7 +19,11 @@ module.exports = {
             assets: path.resolve(__dirname, './src/assets'),
             models: path.resolve(__dirname, './src/models'),
         },
-        extensions: ['.tsx', '.ts', '.js', '.css']
+        extensions: ['.tsx', '.ts', '.js', '.css'],
+        fallback: {
+            path: require.resolve('path-browserify'),
+            fs: false,
+        }
     },
     module: {
         rules: [
@@ -73,7 +77,6 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-
         new HtmlWebpackPlugin({
             template: "index.html"
         })
