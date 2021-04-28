@@ -17,7 +17,7 @@ export default class HomeBlog extends React.Component<IProps> {
   render() {
     // Feature tile
     const isFlipped = this.props.flipped ?? false;
-    const feature = <FeatureBlog isLeft={!isFlipped} article={this.props.articles[0]} />;
+    const feature = <FeatureBlog isLeft={!isFlipped} article={this.props.articles[1]} />;
 
     // Standard tiles
     // const remainingTiles = this.props.articles.slice(1, 4);

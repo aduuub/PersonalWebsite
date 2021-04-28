@@ -43,11 +43,13 @@ export default class HomeRoute extends React.Component<IProps, IState> {
     });
 
     const blogs = category.data.data.recent_posts;
+    console.log(blogs);
     return blogs.map((article: any) => {
       return {
         image: article.featured_image,
         title: article.title,
         body: article.summary,
+        slug: article.url,
       };
     });
   }

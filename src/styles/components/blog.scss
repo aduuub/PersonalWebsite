@@ -1,0 +1,60 @@
+.Blog {
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @media #{$mobile-only} {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    * {
+        color: $white;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    img {
+        display: block;
+        margin: 56px auto 12px auto;
+    }
+
+    figure {
+        margin-bottom: 56px;
+    }
+
+    figcaption {
+        text-align: center;
+    }
+
+    %Code {
+        font-family: monospace;
+        font-size: 18px;
+        background-color: $box-gray;
+        color: $off-black;
+    }
+
+    pre {
+        @extend %Code;
+        padding: 24px;
+        margin-top: 56px;
+    }
+
+    code {
+        @extend %Code;
+        padding: 2px 4px;
+    }
+
+    section {
+        margin-top: 56px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .section-divider {
+        margin-bottom: 56px;
+    }
+}

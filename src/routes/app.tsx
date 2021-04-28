@@ -14,7 +14,7 @@ export default class AppRoute extends React.Component {
       <>
         <Navigation />
         <Switch>
-          <Route path='/blog' component={Blog} />
+          <Route path='/blog/:id' component={Blog} />
           <Route path='*' component={Home} />
         </Switch>
         <Footer />

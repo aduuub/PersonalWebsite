@@ -4,7 +4,16 @@
 
 .Nav {
   background-color: $primary;
-  padding: $v * 3 $v * 5;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @media #{$mobile-only} {
+    padding-left: 24px;
+    padding-right: 24px;
+}
 }
 
 .Nav-title {
