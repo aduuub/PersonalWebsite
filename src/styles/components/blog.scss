@@ -48,6 +48,7 @@
         @extend %Code;
         padding: 24px;
         margin-top: 56px;
+        overflow-x: scroll;
     }
 
     code {

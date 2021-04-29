@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Element } from 'react-scroll';
 
-import person from 'assets/person.png';
+import person from 'assets/me.png';
 import Constants from 'models/constants';
 
 interface IProps {
@@ -15,12 +15,12 @@ export default class AboutMe extends React.Component<IProps> {
           <div className='Container'>
             <div className='Grid'>
               <div className='u-md-width1of2'>
-                <img src={person} />
+                <img className='AboutMe-img' src={person} />
               </div>
               <div className='u-md-width1of2'>
                 <div className='AboutMe-content'>
-                  <h2>Gidday, i’m adam!</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet ligula vitae sapien pulvina.</p>
+                  <h2>Gidday, i’m Adam!</h2>
+                  <p>When I have some down time, I like to spend it with my dog Beau 🐶, biking 🚴‍♂️, being up the mountain 🏂, or working on my car 🛠🏎</p>
                 </div>
               </div>
             </div>

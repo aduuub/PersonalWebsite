@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { Link as NavLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
 import Constants from 'models/constants';
@@ -14,9 +14,9 @@ export default class Navigation extends React.Component {
               <div className='u-width1of1 u-lg-width3of4'>
                 <ul className='Nav-links'>
                   {/* Name */}
-                  <li className='Nav-links-item'>
+                  <NavLink className='Nav-links-item' to='/'>
                     <h3 className='Nav-title'>Adam Wareing</h3>
-                  </li>
+                  </NavLink>
                   {/* Links */}
                   <Link className='Nav-links-item Nav-links-item--tabletOnly' to={Constants.aboutMeKey} duration={500} smooth={true}>
                     <button className='Button Button--bland'>About me</button>
