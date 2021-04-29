@@ -15,9 +15,7 @@ export default class BlogTile extends React.Component<IProps> {
     return (
       <Link className='BlogTile' to={`/blog/${article.slug}`} >
           <div className='BlogTile-container'>
-              <div className='BlogTile-left'>
-                  <img className='BlogTile-left-img' src={article.image} />
-              </div>
+              <div className='BlogTile-left' style={{backgroundImage: `url(${article.image})`}}></div>
               <div className='BlogTile-right'>
                   <h4 className='BlogTile-title'>{article.title}</h4>
                   <p className='BlogTile-body'>{article.body}</p>

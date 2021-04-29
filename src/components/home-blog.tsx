@@ -41,15 +41,15 @@ export default class HomeBlog extends React.Component<IProps> {
         {this.props.blue ? <div className='HomeBlog-slant'></div> : <></> }
           <div className={'HomeBlog ' + homeBlogModifier}>
             <Header {...this.props.header} />
-            <div className='HomeBlog-tiles Container'>
+            <div className='HomeBlog-tiles'>
 
                 {/* Mobile */}
-                <div className='u-md-hidden'>
+                <div className='HomeBlog-tiles--sm'>
                     <BlogList articles={this.props.articles} />
                 </div>
                 
                 {/* Tablet */}
-                <div className='Grid u-sm-hidden'>
+                <div className='Grid HomeBlog-tiles--lg'>
                     <div className='u-md-width1of2'>
                         {columns[0]}
                     </div>

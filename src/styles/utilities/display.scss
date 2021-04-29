@@ -26,3 +26,9 @@
         display: none;
     }
 }
+
+.u-lg-hidden {
+    @media #{$laptop} {
+        display: none;
+    }
+}

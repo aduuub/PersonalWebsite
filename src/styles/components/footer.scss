@@ -1,14 +1,28 @@
+$footer-height: 56px;
+
 .Footer {
-    height: 56px;
-    padding: 12px 48px;
+    height: $footer-height;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.Footer-container {
+    @extend %Container;
     display: flex;
     justify-content: space-between;
+    height: 100%;
 }
 
 .Footer-text {
     margin: 0;
     color: $white;
     height: 100%;
+    line-height: 32px;
+    
+    display: none;
+    @media #{$tablet} {
+        display: inline;
+    }
 }
 
 .Footer-sponsor {
