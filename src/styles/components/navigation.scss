@@ -11,8 +11,7 @@
   padding-right: 3rem;
 
   @media #{$mobile-only} {
-    padding-left: 24px;
-    padding-right: 24px;
+    display: none;
 }
 }
 

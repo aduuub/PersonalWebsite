@@ -23,7 +23,7 @@
 }
 
 .Header-items {
-    @media #{$tablet} {
+    @media #{$laptop} {
         display: flex;
         align-items: stretch;
         justify-content: space-around;   

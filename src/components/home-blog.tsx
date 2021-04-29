@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { Element } from 'react-scroll';
 
 import { IArticleTile } from 'models/article';
@@ -99,12 +100,13 @@ interface IFeatureBlogProps {
 
 function FeatureBlog(props: IFeatureBlogProps) {
     const featureBlogClass = props.isLeft ? 'FeatureBlog--left' : 'FeatureBlog--right';
+    const { article } = props;
     return (
-        <div className={'FeatureBlog ' + featureBlogClass} >
-            <img src={props.article.image} />
+        <Link className={'FeatureBlog ' + featureBlogClass} to={`/blog/${article.slug}`}>
+            <img src={article.image} />
             <h4 className='FeatureBlog-title'>{props.article.title}</h4>
-            <p>{props.article.body}</p>
-        </div>
+            <p>{article.body}</p>
+        </Link>
     );
 }
 

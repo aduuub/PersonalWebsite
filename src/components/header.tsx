@@ -27,7 +27,7 @@ export default class Header extends React.Component<IProps> {
 
   render() {
     const featureTiles = this.titleContent().map((content, index) =>
-      <div className='u-sm-width1of1 u-md-width1of2' key={index}>
+      <div className='u-width1of1 u-lg-width1of2' key={index}>
         <FeatureTile title={content.title} body={content.body} image={content.image} key={index} />
       </div>,
     );

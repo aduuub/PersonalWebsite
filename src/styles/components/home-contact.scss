@@ -8,14 +8,6 @@
 
 .HomeContact-container {
     @extend %Container;
-    
-    padding-left: 24px;
-    padding-right: 24px;
-
-    @media #{$tablet} {
-        padding-left: 96px;
-        padding-right: 96px;
-    }
 }
 
 .HomeContact-title, .HomeContact-body {
