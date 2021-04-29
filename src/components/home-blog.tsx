@@ -5,9 +5,12 @@ import { IArticleTile } from 'models/article';
 import BlogTile from './blog-tile';
 
 interface IProps {
+    // Content
     articles: IArticleTile[];
     name: string;
+    header: IBlogHeader;
 
+    // Style options
     flipped?: boolean;
     blue?: boolean;
 }
@@ -17,11 +20,11 @@ export default class HomeBlog extends React.Component<IProps> {
   render() {
     // Feature tile
     const isFlipped = this.props.flipped ?? false;
-    const feature = <FeatureBlog isLeft={!isFlipped} article={this.props.articles[1]} />;
+    const feature = <FeatureBlog isLeft={!isFlipped} article={this.props.articles[0]} />;
 
     // Standard tiles
-    // const remainingTiles = this.props.articles.slice(1, 4);
-    const remainingTiles = [this.props.articles[0], this.props.articles[0], this.props.articles[0]];
+    const maxTiles = Math.min(4, this.props.articles.length);
+    const remainingTiles = this.props.articles.slice(1, maxTiles);
     const blogs = <BlogList articles={remainingTiles} />;
     
     // Both columns (so we can flip it)
@@ -36,7 +39,7 @@ export default class HomeBlog extends React.Component<IProps> {
         <Element name={this.props.name}>
         {this.props.blue ? <div className='HomeBlog-slant'></div> : <></> }
           <div className={'HomeBlog ' + homeBlogModifier}>
-            <Header />
+            <Header {...this.props.header} />
             <div className='HomeBlog-tiles Container'>
 
                 {/* Mobile */}
@@ -72,15 +75,17 @@ function BlogList(props: {articles: IArticleTile[]}) {
 
 // Blog header ===
 
-function Header() {
+interface IBlogHeader {
+    title: string;
+    body: string;
+}
+
+function Header(props: IBlogHeader) {
     return (
         <div className='HomeBlog-header'>
             <p className='HomeBlog-header-leading'>My thoughts on</p>
-            <h2 className='HomeBlog-header-main'>Project management</h2>
-            <p>I have a project management company that specialises in turning round renovations quickly. This is
-                especially useful when you have tenants wanting to move in quickly, minimising rental loss, or when
-                trading a property (buying to renovate and sell).<br /><br />Get in touch to get some assistance with
-                your renovation. </p>
+            <h2 className='HomeBlog-header-main'>{props.title}</h2>
+            <NewlineText text={props.body} />
         </div>
     );
 }
@@ -102,3 +107,18 @@ function FeatureBlog(props: IFeatureBlogProps) {
         </div>
     );
 }
+
+// NewlineText
+
+interface INewlineTextProps {
+    text: string;
+}
+
+function NewlineText(props: INewlineTextProps) {
+    const text = props.text;
+    return (
+        <>
+        {text.split('\n').map((str) => <p>{str}</p>)}
+        </>
+    );
+  }

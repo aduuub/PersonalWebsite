@@ -11,6 +11,15 @@
         color: $white;
     }
 
+    h3 {
+        a {
+            * {
+                color: orange;
+                text-decoration: underline;
+            }
+        }
+    }
+
     h2 {
         font-size: 32px;
     }

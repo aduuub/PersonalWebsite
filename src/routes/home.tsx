@@ -60,13 +60,23 @@ export default class HomeRoute extends React.Component<IProps, IState> {
         <Header />
         <AboutMe />
         {this.state.projectMangementArticles.length > 0 &&
-          <HomeBlog articles={this.state.projectMangementArticles} name={Constants.propertyKey} />
+          <HomeBlog articles={this.state.projectMangementArticles} name={Constants.propertyKey} header={propertyHeader} />
         }
         {this.state.iosArticles.length > 0 &&
-          <HomeBlog articles={this.state.projectMangementArticles} name={Constants.softwareKey} flipped={true} blue={true} />
+          <HomeBlog articles={this.state.projectMangementArticles} name={Constants.softwareKey} header={softwareHeader} flipped={true} blue={true} />
         }
         <Contact />
       </div>
     );
   }
 }
+
+const propertyHeader = {
+  title: 'Property',
+  body: 'I have a project management company that specialises in turning round renovations quickly. This is especially useful when you have tenants wanting to move in quickly, minimising rental loss, or when trading a property (buying to renovate and sell).\n\nGet in touch to get some assistance with your renovation.',
+};
+
+const softwareHeader = {
+  title: 'iOS Development',
+  body: 'In my spare time, I like to write articles that help people with iOS development - whether it’s a new tool, a how to, or an easier way to do something. You can check some of the articles out below or visit my publications on Medium.',
+};
