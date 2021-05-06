@@ -28,12 +28,10 @@ export default class HomeRoute extends React.Component<IProps, IState> {
     };
   }
 
-  async componentDidMount() {
-    const key = 'project-management';
-    
+  async componentDidMount() {    
     this.setState({
-      projectMangementArticles: await this.articles(key),
-      iosArticles: await this.articles(key),
+      projectMangementArticles: await this.articles('project-management'),
+      iosArticles: await this.articles('ios-development'),
     });
   }
 
@@ -63,7 +61,7 @@ export default class HomeRoute extends React.Component<IProps, IState> {
           <HomeBlog articles={this.state.projectMangementArticles} name={Constants.propertyKey} header={propertyHeader} />
         }
         {this.state.iosArticles.length > 0 &&
-          <HomeBlog articles={this.state.projectMangementArticles} name={Constants.softwareKey} header={softwareHeader} flipped={true} blue={true} />
+          <HomeBlog articles={this.state.iosArticles} name={Constants.softwareKey} header={softwareHeader} flipped={true} blue={true} />
         }
         <Contact />
       </div>
