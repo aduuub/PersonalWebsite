@@ -14,12 +14,12 @@ export default class Header extends React.Component<IProps> {
     return [
       {
         title: 'Property',
-        body: 'I’ve managed several renovations with over 200% return on cost, got my hands dirty on the tools and now love to help others renovate their properties',
+        body: 'I’ve managed several renovations with over 200% return on cost, got my hands dirty on the tools, and now love to help others get a great return.',
         image: house,
       },
       {
         title: 'Software Development',
-        body: 'Beginning my career in front end web and native iOS development, I’ve loved sharing knowledge with my team and leading them towards ambitious goals',
+        body: 'I\'m an iOS developer who has a keen eye for design. I love to share my knowledge with others, and help my team achieve ambitious goals.',
         image: computer,
       },
     ];
@@ -37,7 +37,7 @@ export default class Header extends React.Component<IProps> {
           <div className='Header'>
             <div className='Header-title'>
               <h1>Who is Adam?</h1>
-              <h5>An entrepreneur, software developer, and project manager in Wellington, NZ</h5>
+              <h5>A property investor, developer, and entrepreneur in Wellington, NZ</h5>
             </div>
             <div className='Container'>
               <div className='Grid Header-items'>
