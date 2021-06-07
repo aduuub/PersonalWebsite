@@ -1,4 +1,5 @@
 import * as React from 'react';
+import emailjs from 'emailjs-com';
 
 import { FormEvent, RefObject } from 'react';
 import { Element } from 'react-scroll';
@@ -33,6 +34,8 @@ export default class HomeContact extends React.Component<IProps, IState> {
         this.state = {
             sent: false,
         };
+
+        emailjs.init("user_AYXYuNgX0Mkwsh2CUqQu1");
     }
 
     validateInput(input: HTMLInputElement | HTMLTextAreaElement): boolean {
@@ -57,6 +60,17 @@ export default class HomeContact extends React.Component<IProps, IState> {
         return validName && validEmail && validMessage;
     }
 
+    mailSent(success: boolean) {
+        if (success) {
+
+        } else {
+            this.formMessage = 'Enquiry failed to send';
+        }
+        
+        this.setState({ sent: true });
+        this.sending = false;
+    }
+
     handleSubmit(event: FormEvent<EventTarget>) {
         event.preventDefault();
         
@@ -69,32 +83,17 @@ export default class HomeContact extends React.Component<IProps, IState> {
         }
 
         this.sending = true;
-        console.log('send');
+        
+        const mail = {
+            name: this.value(this.name.current!),
+            email: this.value(this.email.current!),
+            message: this.value(this.message.current!)
+        };
 
-        const name = this.value(this.name.current!);
-        const email = this.value(this.email.current!);
-        const message = this.value(this.message.current!);
-
-        const formData = new ContactFormData(name, email, message);
-        const data = JSON.stringify(formData);
-        const baseUrl = window.location.origin;
-    
-        fetch(baseUrl + '/.netlify/functions/contact', {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method: 'post',
-            body: data,
-        }).then((response) => {
-            if (response.ok) {
-                this.formMessage = 'Enquiry successfully sent';
-            } else {
-                this.formMessage = 'Enquiry failed to send';
-            }
-            this.setState({ sent: true });
-            this.sending = false;
-        });
+        emailjs
+            .send('service_98m4xvj', 'template_9e2fgdm', mail)
+            .then(() => { this.mailSent(true); })
+            .catch(() => { this.mailSent(false); });
     }
 
     resetForm() {

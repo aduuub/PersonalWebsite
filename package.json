@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "buttercms": "^1.2.7",
+    "emailjs-com": "^2.6.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "source-map-explorer": "^2.5.2"
